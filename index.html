@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" class="body-blocked-for-preloader">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Compound Investment</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/adaptive.css" rel="stylesheet">
+    
+</head>
+<body>
+    <div id="preloader">
+        <div class="pulse-button-wrap preloader">
+            <div class="step-button  pulse-4">
+                <a class="center-btn website-btn" href="#">
+                    <img class="center-icon btn-icon rotation" src="img/Sandwatch.svg">
+                </a>
+            </div>
+            <div class="step-button-2 pulse-5"></div>
+            <div class="step-button-3 pulse-6"></div>
+        </div>
+    </div>
+    <div class="pulse-button-wrap on-top">
+        <div class="step-button  pulse-1">
+            <a class="center-btn website-btn" href="#">
+                <img class="center-icon btn-icon" src="img/ontop.svg">
+            </a>
+        </div>
+        <div class="step-button-2 pulse-2"></div>
+        <div class="step-button-3 pulse-3"></div>
+    </div>
+    <header class="header text-page-header contact-info-page">
+        <div class="background-images">
+            <img class="header-curve" src="img/Chart_1.svg">
+            <div class="header-numbers">
+                <p class="number evaporate"><span class="counter1" data-from="358" data-to="999"></span>%</p>
+                <p class="number evaporate"><span class="counter2" data-from="162" data-to="999"></span>%</p>
+                <p class="number evaporate"><span class="counter3" data-from="725" data-to="999"></span>%</p>
+                <p class="number evaporate"><span class="counter4" data-from="512" data-to="999"></span>%</p>
+                <p class="number evaporate"><span class="counter5" data-from="239" data-to="999"></span>%</p>
+            </div>
+        </div>
+        <div class="header-section text-page-header-section contact-info-header-section profit-calculator-title">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-10 offset-xxl-1 col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-10 offset-sm-1">
+                        <div class="title-section">
+                            <h1 class="main-title">
+                                <span class="blue-text">Calculate Compound</span> Investment 
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-curve text-page-bottom-curve contact-info-curve">
+            <img class="bottom-header-curve" src="img/footer-curve.svg">
+            <div class="curve-circle curve-circle-text"></div>
+            <div class="curve-circle curve-circle-text"></div>
+            <div class="curve-circle curve-circle-text"></div>
+        </div>
+    </header>
+    <section class="contact-info-section calculator-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <div class="upper-row">
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                            <div class="top-block">
+                                <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-7 col-sm-12">
+                                    <div class="top-title">
+                                        Initial Investment
+                                    </div>
+                                    <div class="bottom-title">
+                                        Move the slider to select an amount
+                                    </div>
+                                </div>
+                                <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-12">
+                                    
+                                    <div class="withdrawal-amount">
+                                        $<span id="withdrawal-amount">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="withdrawal-amount-slider">
+                                <input type="hidden" class="form-control hide-inp-range" value="" id="initialAmount" style="text-align: right;"  />
+                                <input class="range-input" type="range" min="500.00" max="5000000.00" name="range" step="500.00" value="500.00" onchange="fun2(this.value) "/> 
+                                <div class="range-numbers">
+                                    <div class="col-xxl col-xl col-lg col-md col-sm range-number-min">
+                                        $500
+                                    </div>
+                                    <div class="col-xxl col-xl col-lg col-md col-sm range-number-max">
+                                        $5,000,000
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="withdrawal-add-row">
+                                <div class="col-xxl col-xl col-lg col-md col-sm withdrawal-add-row-title center-row-title">
+                                    Principal
+                                </div>
+                                <!-- <div id="totCost" value="0.00" class="col-xxl col-xl col-lg col-md col-sm withdrawal-add-row-amount">
+                                    $5000
+                                </div> -->
+                                <input class="form-control" id="totCost" value="0.00" readonly style="text-align: right;" tabindex="-1"/>
+                            </div>
+                            <div class="withdrawal-add-row">
+                                <div class="col-xxl col-xl col-lg col-md col-sm withdrawal-add-row-title center-row-title">
+                                    Total Fees
+                                </div>
+                                <!-- <div id="totInterest" value="0.00" class="col-xxl col-xl col-lg col-md col-sm withdrawal-add-row-amount">
+                                    $373.41
+                                </div> -->
+                                <input class="form-control" id="totInterest" value="0.00" readonly style="text-align: right;" tabindex="-1"/>
+                            </div>
+                        </div>
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                            <div class="top-block">
+                                <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-7 col-sm-12">
+                                    <div class="top-title">
+                                        Deposit Term
+                                    </div>
+                                    <div class="bottom-title">
+                                        Move the slider to select the term
+                                    </div>
+                                </div>
+                                <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-12">
+                                    <div class="loan-term">
+                                        <span id="loan-term">0</span> Months
+                                    </div>
+                                </div>
+                            </div>
+                            <input class="form-control" id="monthlyContrib" value="0.00" style="text-align: right;" type="hidden"/>
+                            <div class="withdrawal-amount-slider">
+                                <input id="period" class="range-input" type="range" min="12" max="60" value="12" name="range" step="1" onchange="fun1()"/>
+                                <div class="range-numbers">
+                                    <div class="col-xxl col-xl col-lg col-md col-sm range-number-min">
+                                        12 Months
+                                    </div>
+                                    <div class="col-xxl col-xl col-lg col-md col-sm range-number-max">
+                                        60 Months
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="withdrawal-add-row select-adapt-row">
+                                <div class="col-xxl col-xl col-lg col-md col-sm-12 withdrawal-add-row-title center-row-title">
+                                    Interest Rate
+                                </div>
+                                <div class="col-xxl col-xl col-lg col-md col-sm-12 withdrawal-select-box">
+                                    <input type="hidden" class="hide-inp" id="interestRate" value="0">
+                                    <div class="custom-select">
+                                        <div class="custom-select__selected-text" tabindex="1">0%</div>
+                                        <select class="withdrawal-add-row-percent custom-select__select" size="6" onchange="getValue(this.value)">
+                                            <option   value="0" selected>0%</option>
+                                            <option   value="1.5">1.5%</option>
+                                            <option   value="2.0">2.0%</option>
+                                            <option   value="2.5">2.5%</option>
+                                            <option    value="3.0">3.0%</option>
+                                            <option    value="3.5" >3.5%</option>
+                                            <option  value="4.0">4.0%</option>
+                                            <option    value="4.5">4.5%</option>
+                                            <option    value="5.0">5.0%</option>
+                                            <option   value="5.5">5.5%</option>
+                                            <option  value="6.0">6.0%</option>
+                                            <option   value="6.5">6.5%</option>
+                                            <option   value="7.0">7.0%</option>
+                                            <option    value="7.5">7.5%</option>
+                                            <option    value="8.0">8.0%</option>
+                                            <option   value="8.5">8.5%</option>
+                                            <option    value="9.0">9.0%</option>
+                                            <option    value="9.5">9.5%</option>
+                                            <option    value="10.0">10.0%</option>
+                                            <option    value="10.5">10.5%</option>
+                                            <option    value="11.0">11.0%</option>
+                                            <option    value="11.5">11.5%</option>
+                                            <option    value="12.0">12.0%</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lower-row">
+                        <div class="lower-row-title">Payment Schedule</div>
+                        <div class="calculator-table-row blue-table-row-titles" id="mainTable">
+                            <div class="calculator-table-column">Month</div>
+                            <div class="calculator-table-column">Interest</div>
+                            <div class="calculator-table-column">Total Interest</div>
+                            <div class="calculator-table-column">Balance</div>
+                        </div>
+                        <div id="itembody">
+                        </div>
+                        <div class="calculator-table-row blue-table-row">
+                            <div class="calculator-table-column center-row-title">Final Balance</div>
+                            <div class="calculator-table-column">
+                                <input class="form-control" id="finBalance" value="0.00" readonly style="text-align: right;" tabindex="-1"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="central-btn">
+                        <a href="sign-up.html">get started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
+    <script src="js/random-count.js"></script>
+    
+    <script src="js/main.js"></script>
+    <script type="text/template" data-template="row">
+		<div class="calculator-table-row">
+			<div class="calculator-table-column">
+				${rowNo}
+            </div>
+			<!-- <div class="calculator-table-column">
+				${beginBalance}
+            </div> -->
+			<div class="calculator-table-column">
+				${interest}
+            </div>
+			<div class="calculator-table-column">
+				${contribution}
+            </div>
+			<div class="calculator-table-column">
+				${endBalance}
+            </div>
+		</div>
+	</script>
+</body>
+</html> 
